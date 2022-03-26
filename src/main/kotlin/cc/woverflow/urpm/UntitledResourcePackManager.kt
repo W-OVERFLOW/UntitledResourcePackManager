@@ -1,9 +1,9 @@
-package com.example.template
+package cc.woverflow.urpm
 
 import cc.woverflow.onecore.utils.Updater
 import cc.woverflow.onecore.utils.command
 import cc.woverflow.onecore.utils.openScreen
-import com.example.template.config.TemplateConfig
+import cc.woverflow.urpm.config.UntitledConfig
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
@@ -11,12 +11,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 import java.io.File
 
 @Mod(
-    modid = ForgeTemplate.ID,
-    name = ForgeTemplate.NAME,
-    version = ForgeTemplate.VER,
+    modid = UntitledResourcePackManager.ID,
+    name = UntitledResourcePackManager.NAME,
+    version = UntitledResourcePackManager.VER,
     modLanguageAdapter = "gg.essential.api.utils.KotlinAdapter"
 )
-object ForgeTemplate {
+object UntitledResourcePackManager {
 
     const val NAME = "@NAME@"
     const val VER = "@VER@"
@@ -32,10 +32,10 @@ object ForgeTemplate {
 
     @Mod.EventHandler
     fun onInitialization(event: FMLInitializationEvent) {
-        TemplateConfig.preload()
+        UntitledConfig.preload()
         command(ID) {
             main {
-                TemplateConfig.openScreen()
+                UntitledConfig.openScreen()
             }
         }
     }
